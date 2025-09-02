@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+/htmlcov/
+.tox/
+.coverage
+.coverage.*
+.ipynb_checkpoints
+.pytest_cache/
+
+# FastAPI specific
+.env
+.env.*
+*.log
+/uvicorn.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+.Trash-*
+ehthumbs.db
+Thumbs.db
+
+# Misc
+dist/
+build/
+*.egg-info/
