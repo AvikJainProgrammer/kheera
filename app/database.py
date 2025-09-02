@@ -1,8 +1,15 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from dotenv import load_dotenv
 
-# Replace with your Postgres credentials
-DATABASE_URL = "postgresql://postgres:redacted@localhost:5432/ticketing_db"
+# Load environment variables from .env file
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL is not set in .env")
 
 engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
